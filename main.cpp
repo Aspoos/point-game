@@ -18,11 +18,10 @@ const char ARROW_Y = char(186);
 const char ARROW_X = char(205);
 
 // Weights fot discovery correct arrow
-const int WX_L1_1 = 23, WX_L1_2 = 25, WX_L1_3 = 28, WX_L1_4 = 29;
-const int WX_L2_1 = 43, WX_L2_2 = 45, WX_L2_3 = 47, WX_L2_4 = 49;
+const int WX_L1_1 = 23, WX_L1_2 = 25, WX_L1_3 = 28, WX_L1_4 = 29; // First line with x
+const int WX_L2_1 = 43, WX_L2_2 = 45, WX_L2_3 = 47, WX_L2_4 = 49; // Secound line with x
 
-const int WY_L1_1 = 32, WY_L1_3 = 36, WY_L1_4 = 38;
-const int WY_L2_2 = 34, WY_L2_5 = 40;
+const int WY_L1_1 = 32, WY_L1_3 = 36, WY_L1_4 = 38, WY_L1_2 = 34, WY_L1_5 = 40; // First line with Y
 
 int main() {
     bool gameInProgress = true;
@@ -53,15 +52,25 @@ int main() {
     // Arrow position X
     char ax_l1_1 = ' ', ax_l1_2 = ' ', ax_l1_3 = ' ', ax_l1_4 = ' ';
     char ax_l2_1 = ' ', ax_l2_2 = ' ', ax_l2_3 = ' ', ax_l2_4 = ' ';
+    char ax_l3_1 = ' ', ax_l3_2 = ' ', ax_l3_3 = ' ', ax_l3_4 = ' ';
+    char ax_l4_1 = ' ', ax_l4_2 = ' ', ax_l4_3 = ' ', ax_l4_4 = ' ';
+    char ax_l5_1 = ' ', ax_l5_2 = ' ', ax_l5_3 = ' ', ax_l5_4 = ' ';
 
-    // Arrow position Y
-    char ay_1 = ' ', ay_2 = ' ', ay_3 = ' ', ay_4 = ' ', ay_5 = ' ';
+
+    // Arrow position Y (Empty line squad draw inside lines X above up and below)
+    char ay_el1_1 = ' ', ay_el1_2 = ' ', ay_el1_3 = ' ', ay_el1_4 = ' ', ay_el1_5 = ' ';
+    char ay_el2_1 = ' ', ay_el2_2 = ' ', ay_el2_3 = ' ', ay_el2_4 = ' ', ay_el2_5 = ' ';
+    char ay_el3_1 = ' ', ay_el3_2 = ' ', ay_el3_3 = ' ', ay_el3_4 = ' ', ay_el3_5 = ' ';
+    char ay_el4_1 = ' ', ay_el4_2 = ' ', ay_el4_3 = ' ', ay_el4_4 = ' ', ay_el4_5 = ' ';
 
     // Players square content
-    char square_1 = ' ', square_2 = ' ', square_3 = ' ', square_4 = ' ';
+    char square_el1_1 = ' ', square_el1_2 = ' ', square_el1_3 = ' ', square_el1_4 = ' '; // line empty 1
+    char square_el2_1 = ' ', square_el2_2 = ' ', square_el2_3 = ' ', square_el2_4 = ' '; // line empty 2
+    char square_el3_1 = ' ', square_el3_2 = ' ', square_el3_3 = ' ', square_el3_4 = ' '; // line empty 3
+    char square_el4_1 = ' ', square_el4_2 = ' ', square_el4_3 = ' ', square_el4_4 = ' '; // line empty 4
 
     while (gameInProgress) {
-        std::cout << square_1 << std::endl;
+        std::cout << square_el1_1 << std::endl;
         std::cout << "Menu Options" << std::endl;
         std::cout << " -> 1 - Play" << std::endl;
         std::cout << " -> 2 - Exit game" << std::endl;
@@ -92,10 +101,22 @@ int main() {
                     cachePlayerBusy = PLAYER_NONE;
 
                     std::cout << "Current player: " << currentPlayer << std::endl;
+                    std::cout << std::endl;
                     std::cout << std::setw(5) << "1" << std::setw(2) << "2" << std::setw(2) << "3" << std::setw(2) << "4" << std::setw(2) << "5" << ' ' << std::endl; // Top
+
                     std::cout << std::setw(2) << 1 << std::setw(3) << BLOCK << ax_l1_1 << BLOCK << ax_l1_2 << BLOCK << ax_l1_3 << BLOCK << ax_l1_4 << BLOCK << std::endl; // Line 1 with your columns
-                    std::cout << std::setw(5) << ay_1 << square_1 << ay_2 << square_2 << ay_3 << square_3 << ay_4 << square_4 << ay_5 << std::endl; // Line empty to arrow vertical
+                    std::cout << std::setw(5) << ay_el1_1 << square_el1_1 << ay_el1_2 << square_el1_2 << ay_el1_3 << square_el1_3 << ay_el1_4 << square_el1_4 << ay_el1_5 << std::endl; // Line empty to arrow vertical
                     std::cout << std::setw(2) << 2 << std::setw(3) << BLOCK << ax_l2_1 << BLOCK << ax_l2_2 << BLOCK << ax_l2_3 << BLOCK << ax_l2_4 << BLOCK << std::endl; // Line 2 with your columns
+
+                    std::cout << std::setw(5) << ay_el2_1 << square_el2_1 << ay_el2_2 << square_el2_2 << ay_el2_3 << square_el2_3 << ay_el2_4 << square_el2_4 << ay_el2_5 << std::endl; // Line empty to arrow vertical
+                    std::cout << std::setw(2) << 3 << std::setw(3) << BLOCK << ax_l3_1 << BLOCK << ax_l3_2 << BLOCK << ax_l3_3 << BLOCK << ax_l3_4 << BLOCK << std::endl; // Line 2 with your columns
+
+                    std::cout << std::setw(5) << ay_el3_1 << square_el3_1 << ay_el3_2 << square_el3_2 << ay_el3_3 << square_el3_3 << ay_el3_4 << square_el3_4 << ay_el3_5 << std::endl; // Line empty to arrow vertical
+                    std::cout << std::setw(2) << 4 << std::setw(3) << BLOCK << ax_l4_1 << BLOCK << ax_l4_2 << BLOCK << ax_l4_3 << BLOCK << ax_l4_4 << BLOCK << std::endl; // Line 2 with your columns
+
+                    std::cout << std::setw(5) << ay_el4_1 << square_el4_1 << ay_el4_2 << square_el4_2 << ay_el4_3 << square_el4_3 << ay_el4_4 << square_el4_4 << ay_el4_5 << std::endl; // Line empty to arrow vertical
+                    std::cout << std::setw(2) << 5 << std::setw(3) << BLOCK << ax_l5_1 << BLOCK << ax_l5_2 << BLOCK << ax_l5_3 << BLOCK << ax_l5_4 << BLOCK << std::endl; // Line 2 with your columns
+                    std::cout << std::endl;
 
                     while (coordinate_line == -1) {
                         std::cout << "[1] Line position: ";
@@ -120,10 +141,10 @@ int main() {
                     }
 
                     if (coordinate_line == 1 && coordinate_column == 1) {
-                        if (ax_l1_1 == ' ' || ay_1 == ' ') {
+                        if (ax_l1_1 == ' ' || ay_el1_1 == ' ') {
                             std::cout << "arrow available :" << std::endl;
                             if (ax_l1_1 == ' ') std::cout << " 1 - (L = 1 , C = 2)" << std::endl;
-                            if (ay_1 == ' ') std::cout << " 2 - (L = 2 , C = 1)" << std::endl;
+                            if (ay_el1_1 == ' ') std::cout << " 2 - (L = 2 , C = 1)" << std::endl;
                         } else {
                             cachePlayerBusy = ax_l1_1;
                             std::cout << "posibilities not release, to type new position" << std::endl;
@@ -131,10 +152,10 @@ int main() {
                             continue;
                         }
                     } else if (coordinate_line == 1 && coordinate_column == 2) {
-                        if (ax_l1_2 == ' ' || ay_2 == ' ') {
+                        if (ax_l1_2 == ' ' || ay_el1_2 == ' ') {
                             std::cout << "arrow available :" << std::endl;
                             if (ax_l1_2 == ' ') std::cout << " 1 - (L = 1 , C = 3)" << std::endl;
-                            if (ay_2 == ' ')std::cout << " 2 - (L = 2 , C = 2)" << std::endl;
+                            if (ay_el1_2 == ' ')std::cout << " 2 - (L = 2 , C = 2)" << std::endl;
                         } else {
                             cachePlayerBusy = ax_l1_2;
                             std::cout << "posibilities not release, to type new position" << std::endl;
@@ -142,11 +163,11 @@ int main() {
                             continue;
                         }
                     } else if (coordinate_line == 1 && coordinate_column == 3) {
-                        if (ax_l1_1 == ' ' || ay_3 == ' ' || ax_l1_3 == ' ') {
+                        if (ax_l1_1 == ' ' || ay_el1_3 == ' ' || ax_l1_3 == ' ') {
                             std::cout << "arrow available :" << std::endl;
                             if (ax_l1_1 == ' ') std::cout << " 1 - (L = 1 , C = 2)" << std::endl;
                             if (ax_l1_3 == ' ') std::cout << " 2 - (L = 1 , C = 4)" << std::endl;
-                            if (ay_3 == ' ' )std::cout << " 3 - (L = 2 , C = 3)" << std::endl;
+                            if (ay_el1_3 == ' ' )std::cout << " 3 - (L = 2 , C = 3)" << std::endl;
                         } else {
                             cachePlayerBusy = player_l1_y3;
                             std::cout << "posibilities not release, to type new position" << std::endl;
@@ -154,11 +175,11 @@ int main() {
                             continue;
                         }
                     } else if (coordinate_line == 1 && coordinate_column == 4) {
-                        if (ax_l1_4 == ' ' || ay_4 == ' ' || ax_l1_3 == ' ') {
+                        if (ax_l1_4 == ' ' || ay_el1_4 == ' ' || ax_l1_3 == ' ') {
                             std::cout << "arrow available :" << std::endl;
                             if (ax_l1_3 == ' ') std::cout << " 1 - (L = 1 , C = 3)" << std::endl;
                             if (ax_l1_4 == ' ') std::cout << " 2 - (L = 1 , C = 5)" << std::endl;
-                            if (ay_4 == ' ' )std::cout << " 3 - (L = 2 , C = 4)" << std::endl;
+                            if (ay_el1_4 == ' ' )std::cout << " 3 - (L = 2 , C = 4)" << std::endl;
                         } else {
                             cachePlayerBusy = player_l1_y3;
                             std::cout << "posibilities not release, to type new position" << std::endl;
@@ -196,6 +217,9 @@ int main() {
                     std::cout << "Weight: " << weight << std::endl;
                     system("pause");
                     switch (weight) {
+                        /*
+                         * LINE 1
+                         */
                         // L = 1, C = 1 / L = 1, C = 2 | (11 + 12 = 23)
                         case WX_L1_1:
                             if (ax_l1_1 == ' ') {
@@ -234,6 +258,10 @@ int main() {
                                 cachePlayerBusy = player_l1_x4;
                             }
                             break;
+
+                        /*
+                         * LINE 2
+                         */
                         // L = 2, C = 1 / L = 2, C = 2 | 21 + 22 = 43
                         case WX_L2_1:
                             if (ax_l2_1 == ' ') {
@@ -270,47 +298,99 @@ int main() {
                                 cachePlayerBusy = player_l2_x4;
                             }
                         break;
+                        /*
+                         * LINE 3
+                         */
+
+                        // L = 3, C = 1 / L = 3 , C = 2 | 31 + 32 = 63 | right
+                        // L = 3, C = 1 / L = 2 , C = 1 | 31 + 21 = 52 | above
+                        // L = 3, C = 1 / L = 4 , C = 1 | 31 + 41 = 72 | below
+
+                        // L = 3, C = 2 / L = 3 , C = 3 | 32 + 33 = 65 | right
+                        // L = 3, C = 2 / L = 2 , C = 2 | 32 + 22 = 54 | above
+                        // L = 3, C = 2 / L = 4 , C = 2 | 32 + 42 = 74 | below
+
+                        // L = 3, C = 3 / L = 3 , C = 4 | 33 + 34 = 67 | right
+                        // L = 3, C = 3 / L = 2 , C = 3 | 33 + 23 = 56 | above
+                        // L = 3, C = 3 / L = 4 , C = 3 | 33 + 43 = 76 | below
+
+                        // L = 3, C = 4 / L = 3 , C = 5 | 34 + 35 = 69 | right
+                        // L = 3, C = 4 / L = 2 , C = 4 | 34 + 24 = 58 | above
+                        // L = 3, C = 4 / L = 4 , C = 4 | 34 + 44 = 78 | below
+
+                        // L = 3, C = 5 / L = 2 , C = 5 | 35 + 25 = 60 | above
+                        // L = 3, C = 5 / L = 4 , C = 5 | 35 + 45 = 80 | below
+
+                        /*
+                         * LINE 4
+                         */
+
+                        // L = 4, C = 1 / L = 4 , C = 2 | 41 + 42 = 83 | right
+                        // L = 4, C = 1 / L = 5 , C = 1 | 41 + 51 = 92 | below
+
+                        // L = 4, C = 2 / L = 4 , C = 3 | 42 + 43 = 85 | right
+                        // L = 4, C = 2 / L = 5 , C = 2 | 42 + 52 = 94 | below
+
+                        // L = 4, C = 3 / L = 4 , C = 4 | 43 + 44 = 87 | right
+                        // L = 4, C = 3 / L = 5 , C = 3 | 43 + 53 = 96 | below
+
+                        // L = 4, C = 4 / L = 4 , C = 5 | 44 + 45 = 89 | right
+                        // L = 4, C = 4 / L = 5 , C = 4 | 44 + 54 = 98 | below
+
+                        // L = 4, C = 5 / L = 5 , C = 5 | 45 + 55 = 100 | below
+
+                        /*
+                        * LINE 5
+                        */
+                        // L = 5, C = 1 / L = 5 , C = 2 | 51 + 52 = 103 | right/left
+                        // L = 5, C = 2 / L = 5 , C = 3 | 52 + 53 = 105 | right/left
+                        // L = 5, C = 3 / L = 5 , C = 4 | 53 + 54 = 107 | right/left
+                        // L = 5, C = 4 / L = 5 , C = 5 | 54 + 55 = 109 | right/left
+
                         // L = 1, C = 3 / L = 2, C = 3 | 13 + 23 = 36
                         case WY_L1_3:
-                            if (ay_3 == ' ') {
+                            if (ay_el1_3 == ' ') {
                                 player_l1_y3 = currentPlayer;
-                                ay_3 = ARROW_Y;
+                                ay_el1_3 = ARROW_Y;
                             } else {
                                 cachePlayerBusy = player_l1_y3;
                             }
                             break;
+                        /*
+                         * Empty Line 1
+                         */
                         // L = 1, C, 4 / L = 2, C = 4 | 14 + 24 = 38
                         case WY_L1_4:
-                            if (ay_4 == ' ') {
+                            if (ay_el1_4 == ' ') {
                                 player_l1_y4 = currentPlayer;
-                                ay_4 = ARROW_Y;
+                                ay_el1_4 = ARROW_Y;
                             } else {
                                 cachePlayerBusy = player_l1_y4;
                             }
                             break;
                         // L = 1, C = 1 / L = 2, C = 1 | (11 + 21 = 32)
                         case WY_L1_1:
-                            if (ay_1 == ' ') {
+                            if (ay_el1_1 == ' ') {
                                 player_l1_y1 = currentPlayer;
-                                ay_1 = ARROW_Y;
+                                ay_el1_1 = ARROW_Y;
                             } else {
                                 cachePlayerBusy = player_l1_y1;
                             }
                             break;
                         // L = 1, C = 2 / L = 2, C = 2 | 12 + 22 = 34
-                        case WY_L2_2:
-                            if (ay_2 == ' ') {
+                        case WY_L1_2:
+                            if (ay_el1_2 == ' ') {
                                 player_l2_y1 = currentPlayer;
-                                ay_2 = ARROW_Y;
+                                ay_el1_2 = ARROW_Y;
                             } else {
                                 cachePlayerBusy = player_l2_y1;
                             }
                             break;
                         // L = 1, C = 5 / L = 2, C = 5 | 15 + 25 = 40
-                        case WY_L2_5:
-                            if (ay_5 == ' ') {
+                        case WY_L1_5:
+                            if (ay_el1_5 == ' ') {
                                 player_l2_x5 = currentPlayer;
-                                ay_5 = ARROW_Y;
+                                ay_el1_5 = ARROW_Y;
                             } else {
                                 cachePlayerBusy = player_l2_x5;
                             }
@@ -321,16 +401,16 @@ int main() {
 
                     if (player_l1_x1 != PLAYER_NONE && player_l1_x1 == player_l2_x1 &&
                         player_l1_x1 == player_l1_y1 && player_l1_y1 == player_l2_y1) {
-                        square_1 = player_l2_x1;
+                        square_el1_1 = player_l2_x1;
                     } else if (player_l1_x2 != PLAYER_NONE && player_l1_x2 == player_l2_x2 &&
                                player_l1_x2 == player_l1_y1 && player_l1_y1 == player_l2_y1) {
-                        square_2 = player_l2_x2;
+                        square_el1_2 = player_l2_x2;
                     } else if (player_l1_x3 != PLAYER_NONE && player_l1_x3 == player_l2_x3 &&
                                player_l1_x3 == player_l1_y3 && player_l1_y3 == player_l2_x5) {
-                        square_3 = player_l2_x3;
+                        square_el1_3 = player_l2_x3;
                     } else if (player_l1_x4 != PLAYER_NONE && player_l1_x4 == player_l2_x4 &&
                                player_l1_x4 == player_l1_y4 && player_l1_y4 == player_l2_x5) {
-                        square_4 = player_l2_x4;
+                        square_el1_4 = player_l2_x4;
                     }
                 }
                 break;
