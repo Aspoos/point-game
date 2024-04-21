@@ -28,26 +28,20 @@ int main() {
     bool matchInProgress = false;
 
     char cachePlayerBusy = PLAYER_NONE;
-
     char currentPlayer = PLAYER_NONE;
 
     int option = -1;
 
-    char player_l1_y1 = PLAYER_NONE,
-            player_l1_y3 = PLAYER_NONE,
-            player_l2_y1 = PLAYER_NONE,
-            player_l1_y4 = PLAYER_NONE;
+    char player_l1_y1 = PLAYER_NONE, player_l1_y2 = PLAYER_NONE, player_l1_y3 = PLAYER_NONE, player_l1_y4 = PLAYER_NONE;
+    char player_l2_y1 = PLAYER_NONE, player_l2_y2 = PLAYER_NONE, player_l2_y3 = PLAYER_NONE, player_l2_y4 = PLAYER_NONE;
+    char player_l3_y1 = PLAYER_NONE, player_l3_y2 = PLAYER_NONE, player_l3_y3 = PLAYER_NONE, player_l3_y4 = PLAYER_NONE;
+    char player_l4_y1 = PLAYER_NONE, player_l4_y2 = PLAYER_NONE, player_l4_y3 = PLAYER_NONE, player_l4_y4 = PLAYER_NONE;
 
-    char player_l1_x1 = PLAYER_NONE,
-            player_l1_x2 = PLAYER_NONE,
-            player_l1_x3 = PLAYER_NONE,
-            player_l1_x4 = PLAYER_NONE;
-
-    char player_l2_x1 = PLAYER_NONE,
-         player_l2_x2 = PLAYER_NONE,
-         player_l2_x3 = PLAYER_NONE,
-         player_l2_x4 = PLAYER_NONE,
-         player_l2_x5 = PLAYER_NONE;
+    char player_l1_x1 = PLAYER_NONE, player_l1_x2 = PLAYER_NONE, player_l1_x3 = PLAYER_NONE, player_l1_x4 = PLAYER_NONE;
+    char player_l2_x1 = PLAYER_NONE, player_l2_x2 = PLAYER_NONE, player_l2_x3 = PLAYER_NONE, player_l2_x4 = PLAYER_NONE, player_l2_x5 = PLAYER_NONE;
+    char player_l3_x1 = PLAYER_NONE, player_l3_x2 = PLAYER_NONE, player_l3_x3 = PLAYER_NONE, player_l3_x4 = PLAYER_NONE, player_l3_x5 = PLAYER_NONE;
+    char player_l4_x1 = PLAYER_NONE, player_l4_x2 = PLAYER_NONE, player_l4_x3 = PLAYER_NONE, player_l4_x4 = PLAYER_NONE, player_l4_x5 = PLAYER_NONE;
+    char player_l5_x1 = PLAYER_NONE, player_l5_x2 = PLAYER_NONE, player_l5_x3 = PLAYER_NONE, player_l5_x4 = PLAYER_NONE, player_l5_x5 = PLAYER_NONE;
 
     // Arrow position X
     char ax_l1_1 = ' ', ax_l1_2 = ' ', ax_l1_3 = ' ', ax_l1_4 = ' ';
@@ -303,50 +297,255 @@ int main() {
                          */
 
                         // L = 3, C = 1 / L = 3 , C = 2 | 31 + 32 = 63 | right
+                        case 63:
+                            if (ax_l3_1 == ' ') {
+                                player_l3_x1 = currentPlayer;
+                                ax_l3_1 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l3_x1;
+                            }
+                            break;
                         // L = 3, C = 1 / L = 2 , C = 1 | 31 + 21 = 52 | above
+                        case 52:
+                            if (ay_el2_1 == ' ') {
+                                player_l2_y1 = currentPlayer;
+                                ay_el2_1 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l2_y1;
+                            }
+                            break;
                         // L = 3, C = 1 / L = 4 , C = 1 | 31 + 41 = 72 | below
-
+                        case 72:
+                            if (ay_el3_1 == ' ') {
+                                player_l3_y1 = currentPlayer;
+                                ay_el3_1 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l3_y1;
+                            }
+                            break;
                         // L = 3, C = 2 / L = 3 , C = 3 | 32 + 33 = 65 | right
+                        case 65:
+                            if (ax_l3_2 == ' ') {
+                                player_l3_x2 = currentPlayer;
+                                ax_l3_2 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l3_x2;
+                            }
+                            break;
                         // L = 3, C = 2 / L = 2 , C = 2 | 32 + 22 = 54 | above
+                        case 54:
+                            if (ay_el2_2 == ' ') {
+                                player_l2_y2 = currentPlayer;
+                                ay_el2_2 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l2_y2;
+                            }
+                            break;
                         // L = 3, C = 2 / L = 4 , C = 2 | 32 + 42 = 74 | below
-
+                        case 74:
+                            if (ay_el3_2 == ' ') {
+                                player_l3_y2 = currentPlayer;
+                                ay_el3_2 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l3_y2;
+                            }
+                            break;
                         // L = 3, C = 3 / L = 3 , C = 4 | 33 + 34 = 67 | right
+                        case 67:
+                            if (ax_l3_3 == ' ') {
+                                player_l3_x3 = currentPlayer;
+                                ax_l3_3 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l3_x3;
+                            }
+                            break;
                         // L = 3, C = 3 / L = 2 , C = 3 | 33 + 23 = 56 | above
+                        case 56:
+                            if (ay_el2_3 == ' ') {
+                                player_l2_y3 = currentPlayer;
+                                ay_el2_3 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l2_y3;
+                            }
+                            break;
                         // L = 3, C = 3 / L = 4 , C = 3 | 33 + 43 = 76 | below
-
+                        case 76:
+                            if (ay_el3_3 == ' ') {
+                                player_l3_y3 = currentPlayer;
+                                ay_el3_3 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l3_y3;
+                            }
+                            break;
                         // L = 3, C = 4 / L = 3 , C = 5 | 34 + 35 = 69 | right
+                        case 69:
+                            if (ax_l3_4 == ' ') {
+                                player_l3_x4 = currentPlayer;
+                                ax_l3_4 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l3_x4;
+                            }
+                            break;
                         // L = 3, C = 4 / L = 2 , C = 4 | 34 + 24 = 58 | above
+                        case 58:
+                            if (ay_el2_4 == ' ') {
+                                player_l2_y4 = currentPlayer;
+                                ay_el2_4 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l2_y4;
+                            }
+                            break;
                         // L = 3, C = 4 / L = 4 , C = 4 | 34 + 44 = 78 | below
-
+                        case 78:
+                            if (ay_el3_4 == ' ') {
+                                player_l3_y4 = currentPlayer;
+                                ay_el3_4 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l3_y4;
+                            }
+                            break;
                         // L = 3, C = 5 / L = 2 , C = 5 | 35 + 25 = 60 | above
+                        case 60:
+                            if (ay_el2_5 == ' ') {
+                                player_l2_x5 = currentPlayer;
+                                ay_el2_5 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l2_x5;
+                            }
+                            break;
                         // L = 3, C = 5 / L = 4 , C = 5 | 35 + 45 = 80 | below
-
+                        case 80:
+                            if (ay_el3_5 == ' ') {
+                                player_l3_x5 = currentPlayer;
+                                ay_el3_5 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l3_x5;
+                            }
+                            break;
                         /*
                          * LINE 4
                          */
 
                         // L = 4, C = 1 / L = 4 , C = 2 | 41 + 42 = 83 | right
+                        case 83:
+                            if (ax_l4_1 == ' ') {
+                                player_l4_x1 = currentPlayer;
+                                ax_l4_1 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l4_x1;
+                            }
+                            break;
                         // L = 4, C = 1 / L = 5 , C = 1 | 41 + 51 = 92 | below
-
+                        case 92:
+                            if (ay_el4_1 == ' ') {
+                                player_l4_y1 = currentPlayer;
+                                ay_el4_1 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l4_y1;
+                            }
+                            break;
                         // L = 4, C = 2 / L = 4 , C = 3 | 42 + 43 = 85 | right
+                        case 85:
+                            if (ax_l4_2 == ' ') {
+                                player_l4_x2 = currentPlayer;
+                                ax_l4_2 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l4_x2;
+                            }
+                            break;
                         // L = 4, C = 2 / L = 5 , C = 2 | 42 + 52 = 94 | below
-
+                        case 94:
+                            if (ay_el4_2 == ' ') {
+                                player_l4_y2 = currentPlayer;
+                                ay_el4_2 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l4_y2;
+                            }
+                            break;
                         // L = 4, C = 3 / L = 4 , C = 4 | 43 + 44 = 87 | right
+                        case 87:
+                            if (ax_l4_3 == ' ') {
+                                player_l4_x3 = currentPlayer;
+                                ax_l4_3 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l4_x3;
+                            }
+                            break;
                         // L = 4, C = 3 / L = 5 , C = 3 | 43 + 53 = 96 | below
-
+                        case 96:
+                            if (ay_el4_3 == ' ') {
+                                player_l4_y3 = currentPlayer;
+                                ay_el4_3 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l4_y3;
+                            }
+                            break;
                         // L = 4, C = 4 / L = 4 , C = 5 | 44 + 45 = 89 | right
+                        case 89:
+                            if (ax_l4_4 == ' ') {
+                                player_l4_x4 = currentPlayer;
+                                ax_l4_4 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l4_x4;
+                            }
+                            break;
                         // L = 4, C = 4 / L = 5 , C = 4 | 44 + 54 = 98 | below
-
+                        case 98:
+                            if (ay_el4_4 == ' ') {
+                                player_l4_y4 = currentPlayer;
+                                ay_el4_4 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l4_y4;
+                            }
+                            break;
                         // L = 4, C = 5 / L = 5 , C = 5 | 45 + 55 = 100 | below
-
+                        case 100:
+                            if (ay_el4_5 == ' ') {
+                                player_l5_x5 = currentPlayer;
+                                ay_el4_5 = ARROW_Y;
+                            } else {
+                                cachePlayerBusy = player_l5_x5;
+                            }
+                            break;
                         /*
                         * LINE 5
                         */
                         // L = 5, C = 1 / L = 5 , C = 2 | 51 + 52 = 103 | right/left
+                        case 103:
+                            if (ax_l5_1 == ' ') {
+                                player_l5_x1 = currentPlayer;
+                                ax_l5_1 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l5_x1;
+                            }
+                            break;
                         // L = 5, C = 2 / L = 5 , C = 3 | 52 + 53 = 105 | right/left
+                        case 105:
+                            if (ax_l5_2 == ' ') {
+                                player_l5_x2 = currentPlayer;
+                                ax_l5_2 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l5_x2;
+                            }
+                            break;
                         // L = 5, C = 3 / L = 5 , C = 4 | 53 + 54 = 107 | right/left
+                        case 107:
+                            if (ax_l5_3 == ' ') {
+                                player_l5_x3 = currentPlayer;
+                                ax_l5_3 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l5_x3;
+                            }
+                            break;
                         // L = 5, C = 4 / L = 5 , C = 5 | 54 + 55 = 109 | right/left
-
+                        case 109:
+                            if (ax_l5_4 == ' ') {
+                                player_l5_x4 = currentPlayer;
+                                ax_l5_4 = ARROW_X;
+                            } else {
+                                cachePlayerBusy = player_l5_x4;
+                            }
+                            break;
                         // L = 1, C = 3 / L = 2, C = 3 | 13 + 23 = 36
                         case WY_L1_3:
                             if (ay_el1_3 == ' ') {
@@ -380,10 +579,10 @@ int main() {
                         // L = 1, C = 2 / L = 2, C = 2 | 12 + 22 = 34
                         case WY_L1_2:
                             if (ay_el1_2 == ' ') {
-                                player_l2_y1 = currentPlayer;
+                                player_l1_y2 = currentPlayer;
                                 ay_el1_2 = ARROW_Y;
                             } else {
-                                cachePlayerBusy = player_l2_y1;
+                                cachePlayerBusy = player_l1_y2;
                             }
                             break;
                         // L = 1, C = 5 / L = 2, C = 5 | 15 + 25 = 40
@@ -399,18 +598,28 @@ int main() {
                             std::cout << "Invalid weight, please type valid weight." << std::endl;
                     }
 
-                    if (player_l1_x1 != PLAYER_NONE && player_l1_x1 == player_l2_x1 &&
-                        player_l1_x1 == player_l1_y1 && player_l1_y1 == player_l2_y1) {
+                    if (player_l1_x1 != PLAYER_NONE && player_l1_x1 == player_l2_x1 && player_l1_x1 == player_l1_y1 && player_l1_y1 == player_l1_y2) {
                         square_el1_1 = player_l2_x1;
-                    } else if (player_l1_x2 != PLAYER_NONE && player_l1_x2 == player_l2_x2 &&
-                               player_l1_x2 == player_l1_y1 && player_l1_y1 == player_l2_y1) {
+                    } else if (player_l1_x2 != PLAYER_NONE && player_l1_x2 == player_l2_x2 && player_l1_x2 == player_l1_y1 && player_l1_y1 == player_l1_y2) {
                         square_el1_2 = player_l2_x2;
-                    } else if (player_l1_x3 != PLAYER_NONE && player_l1_x3 == player_l2_x3 &&
-                               player_l1_x3 == player_l1_y3 && player_l1_y3 == player_l2_x5) {
+                    } else if (player_l1_x3 != PLAYER_NONE && player_l1_x3 == player_l2_x3 && player_l1_x3 == player_l1_y3 && player_l1_y3 == player_l2_x5) {
                         square_el1_3 = player_l2_x3;
-                    } else if (player_l1_x4 != PLAYER_NONE && player_l1_x4 == player_l2_x4 &&
-                               player_l1_x4 == player_l1_y4 && player_l1_y4 == player_l2_x5) {
+                    } else if (player_l1_x4 != PLAYER_NONE && player_l1_x4 == player_l2_x4 && player_l1_x4 == player_l1_y4 && player_l1_y4 == player_l2_x5) {
                         square_el1_4 = player_l2_x4;
+                    } else if (player_l2_x1 != PLAYER_NONE && player_l2_x1 == player_l3_x1 && player_l2_x1 == player_l2_y1 && player_l2_y1 == player_l2_y2) {
+                        square_el2_1 = player_l3_x1;
+                    } else if (player_l2_x2 != PLAYER_NONE && player_l2_x2 == player_l3_x2 && player_l2_x2 == player_l2_y1 && player_l2_y1 == player_l2_y2) {
+                        square_el2_2 = player_l3_x2;
+                    } else if (player_l2_x3 != PLAYER_NONE && player_l2_x3 == player_l3_x3 && player_l2_x3 == player_l2_y3 && player_l2_y3 == player_l3_x5) {
+                        square_el2_3 = player_l3_x3;
+                    } else if (player_l2_x4 != PLAYER_NONE && player_l2_x4 == player_l3_x4 && player_l2_x4 == player_l2_y4 && player_l2_y4 == player_l3_x5) {
+                        square_el2_4 = player_l3_x4;
+                    } else if (player_l3_x1 != PLAYER_NONE && player_l3_x1 == player_l4_x1 && player_l3_x1 == player_l3_y1 && player_l3_y1 == player_l3_y2) {
+                        square_el3_1 = player_l4_x1;
+                    } else if (player_l3_x2 != PLAYER_NONE && player_l3_x2 == player_l4_x2 && player_l3_x2 == player_l3_y1 && player_l3_y1 == player_l3_y2) {
+                        square_el3_2 = player_l4_x2;
+                    } else if (player_l3_x3 != PLAYER_NONE && player_l3_x3 == player_l4_x3 && player_l3_x3 == player_l3_y3 && player_l3_y3 == player_l4_x5) {
+                        square_el3_3 = player_l4_x3;
                     }
                 }
                 break;
